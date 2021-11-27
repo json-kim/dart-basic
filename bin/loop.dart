@@ -35,5 +35,16 @@ void main() {
   int money = 100;
   do {
     print(money);
+    money++;
   } while (money < 100);
+
+  int num = 0;
+  while (true) {
+    if (num == 1) {
+      continue;
+    } else if (num == 3) {
+      break;
+    }
+    num++;
+  }
 }
