@@ -4,16 +4,16 @@ import 'dart:io';
 import 'exam.dart';
 
 class ExamList {
-  late List<Exam> exams;
-  late int current;
+  late List<Exam> _exams;
+  late int _current;
 
   void init() {
-    exams = [];
-    current = 0;
+    _exams = [];
+    _current = 0;
   }
 
   void printList1() {
-    printList2(current);
+    printList2(_current);
   }
 
   void printList2(int size) {
@@ -21,7 +21,7 @@ class ExamList {
     print('|   성적 출력                  |');
     print('------------------------------');
 
-    List<Exam> exams = this.exams;
+    List<Exam> exams = _exams;
 
     for (int i = 0; i < size; i++) {
       Exam exam = exams[i];
@@ -58,7 +58,7 @@ class ExamList {
     newExam.eng = eng;
     newExam.math = math;
 
-    exams.add(newExam);
-    current++;
+    _exams.add(newExam);
+    _current++;
   }
 }
