@@ -7,7 +7,7 @@ class ExamList {
   late List<Exam> _exams;
   late int _current;
 
-  void init() {
+  ExamList() {
     _exams = [];
     _current = 0;
   }

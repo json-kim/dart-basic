@@ -5,7 +5,6 @@ import 'exam_list.dart';
 
 void main() {
   ExamList list = ExamList();
-  list.init();
   //list._current = 3; 접근 불가능
 
   int menu;
