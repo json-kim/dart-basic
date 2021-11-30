@@ -7,21 +7,21 @@ class ExamList {
   late List<Exam> exams;
   late int current;
 
-  void init(List<Exam> list, int current) {
-    exams = list;
-    this.current = current;
+  void init() {
+    exams = [];
+    current = 0;
   }
 
-  void printList1(ExamList list) {
-    printList2(list, list.current);
+  void printList1() {
+    printList2(current);
   }
 
-  void printList2(ExamList list, int size) {
+  void printList2(int size) {
     print('------------------------------');
     print('|   성적 출력                  |');
     print('------------------------------');
 
-    List<Exam> exams = list.exams;
+    List<Exam> exams = this.exams;
 
     for (int i = 0; i < size; i++) {
       Exam exam = exams[i];
@@ -41,7 +41,7 @@ class ExamList {
     }
   }
 
-  void inputList(ExamList list) {
+  void inputList() {
     print('------------------------------');
     print('|   성적 입력                  |');
     print('------------------------------');
@@ -58,7 +58,7 @@ class ExamList {
     newExam.eng = eng;
     newExam.math = math;
 
-    list.exams.add(newExam);
-    list.current++;
+    exams.add(newExam);
+    current++;
   }
 }

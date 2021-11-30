@@ -1,12 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'exam.dart';
 import 'exam_list.dart';
 
 void main() {
   ExamList list = ExamList();
-  list.init([], 0);
+  list.init();
 
   int menu;
   bool keepLoop = true;
@@ -15,10 +14,10 @@ void main() {
     menu = inputMenu();
     switch (menu) {
       case 1:
-        list.inputList(list);
+        list.inputList();
         break;
       case 2:
-        list.printList1(list);
+        list.printList1();
         break;
       case 3:
         keepLoop = false;
