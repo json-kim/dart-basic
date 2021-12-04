@@ -8,4 +8,5 @@ void main() {
   exam.com = 10;
 
   print(exam.total());
+  print(exam.avg());
 }
