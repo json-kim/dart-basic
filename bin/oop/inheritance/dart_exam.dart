@@ -5,6 +5,10 @@ class DartExam extends Exam {
   int get com => _com;
   set com(int comVal) => _com = comVal;
 
+  DartExam({kor, eng, math, com})
+      : _com = com ??= 0,
+        super(kor: kor, eng: eng, math: math);
+
   @override
   int total() {
     return super.total() + _com;
