@@ -12,11 +12,9 @@ class ExamList {
     _current = 0;
   }
 
-  void printList1() {
-    printList2(_current);
-  }
+  void printList({int? size}) {
+    size ??= _current;
 
-  void printList2(int size) {
     print('------------------------------');
     print('|   성적 출력                  |');
     print('------------------------------');

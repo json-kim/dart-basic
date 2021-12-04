@@ -17,7 +17,7 @@ void main() {
         list.inputList();
         break;
       case 2:
-        list.printList1();
+        list.printList();
         break;
       case 3:
         keepLoop = false;
