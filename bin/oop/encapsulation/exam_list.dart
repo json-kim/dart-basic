@@ -27,8 +27,8 @@ class ExamList {
       int eng = exam.eng;
       int math = exam.math;
 
-      int total = kor + eng + math;
-      double avg = total / 3;
+      int total = exam.total();
+      double avg = exam.avg();
 
       print('국어 : $kor');
       print('영어 : $eng');
@@ -51,10 +51,7 @@ class ExamList {
     print('수학 : ');
     int math = int.parse(stdin.readLineSync(encoding: utf8) ?? '0');
 
-    Exam newExam = Exam();
-    newExam.kor = kor;
-    newExam.eng = eng;
-    newExam.math = math;
+    Exam newExam = Exam(kor: kor, eng: eng, math: math);
 
     _exams.add(newExam);
     _current++;
