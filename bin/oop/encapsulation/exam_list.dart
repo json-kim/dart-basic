@@ -1,6 +1,3 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'exam.dart';
 
 class ExamList {
@@ -12,48 +9,16 @@ class ExamList {
     _current = 0;
   }
 
-  void printList({int? size}) {
-    size ??= _current;
-
-    print('------------------------------');
-    print('|   성적 출력                  |');
-    print('------------------------------');
-
-    List<Exam> exams = _exams;
-
-    for (int i = 0; i < size; i++) {
-      Exam exam = exams[i];
-      int kor = exam.kor;
-      int eng = exam.eng;
-      int math = exam.math;
-
-      int total = exam.total();
-      double avg = exam.avg();
-
-      print('국어 : $kor');
-      print('영어 : $eng');
-      print('수학 : $math');
-      print('총점 : $total');
-      print('평균 : $avg');
-      print('------------------------------');
-    }
+  void add(Exam exam) {
+    _exams.add(exam);
+    _current++;
   }
 
-  void inputList() {
-    print('------------------------------');
-    print('|   성적 입력                  |');
-    print('------------------------------');
+  Exam get(int index) {
+    return _exams[index];
+  }
 
-    print('국어 : ');
-    int kor = int.parse(stdin.readLineSync(encoding: utf8) ?? '0');
-    print('영어 : ');
-    int eng = int.parse(stdin.readLineSync(encoding: utf8) ?? '0');
-    print('수학 : ');
-    int math = int.parse(stdin.readLineSync(encoding: utf8) ?? '0');
-
-    Exam newExam = Exam(kor: kor, eng: eng, math: math);
-
-    _exams.add(newExam);
-    _current++;
+  int size() {
+    return _current;
   }
 }

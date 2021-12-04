@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'exam_list.dart';
+import 'exam_console.dart';
 
 void main() {
-  ExamList list = ExamList();
+  ExamConsole console = ExamConsole();
   //list._current = 3; 접근 불가능
 
   int menu;
@@ -14,10 +14,10 @@ void main() {
     menu = inputMenu();
     switch (menu) {
       case 1:
-        list.inputList();
+        console.inputList();
         break;
       case 2:
-        list.printList();
+        console.printList();
         break;
       case 3:
         keepLoop = false;
