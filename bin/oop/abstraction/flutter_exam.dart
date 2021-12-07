@@ -3,7 +3,7 @@ import 'package:dart_basic/abstract_exam_lib.dart';
 class FlutterExam extends Exam {
   int _com;
   int get com => _com;
-  set get(comVal) => _com = comVal;
+  set com(comVal) => _com = comVal;
 
   FlutterExam({kor, eng, math, com})
       : _com = com ??= 0,
